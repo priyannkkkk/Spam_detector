@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spam Detector</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-r from-purple-600 to-blue-500 h-screen flex items-center justify-center">
+
+    <div class="w-2/3 md:w-1/2 bg-white/20 backdrop-blur-lg rounded-3xl shadow-2xl p-10 flex flex-col items-center space-y-6 animate-fade-in">
+        <h1 class="text-4xl font-bold text-white text-center">Spam Detector</h1>
+        <p class="text-white/90 text-center">Type a message below to check if it's spam or not.</p>
+
+        <textarea id="messageInput" rows="4" placeholder="Enter your message..." class="w-full p-4 rounded-xl text-black focus:outline-none"></textarea>
+
+        <button onclick="checkSpam()" class="bg-white/30 hover:bg-white/50 text-white font-bold py-3 px-6 rounded-xl transition-all duration-500 transform hover:scale-105">
+            Check Spam
+        </button>
+
+        <div id="result" class="text-white text-xl font-semibold mt-4"></div>
+    </div>
+
+    <script>
+        async function checkSpam() {
+            const message = document.getElementById('messageInput').value;
+            if (!message) return alert("Please enter a message");
+
+            // For now, a mock function: replace with API call to your model
+            const isSpam = mockSpamPredict(message);
+
+            const resultDiv = document.getElementById('result');
+            if(isSpam === 'spam') {
+                resultDiv.textContent = "⚠️ This is likely SPAM!";
+                resultDiv.classList.add('text-red-500');
+                resultDiv.classList.remove('text-green-400');
+            } else {
+                resultDiv.textContent = "✅ This looks safe.";
+                resultDiv.classList.add('text-green-400');
+                resultDiv.classList.remove('text-red-500');
+            }
+        }
+
+        // Mock prediction logic (replace with actual model API call)
+        function mockSpamPredict(text) {
+            const spamWords = ["lottery","won","prize","account","click","urgent","money"];
+            const lower = text.toLowerCase();
+            return spamWords.some(word => lower.includes(word)) ? "spam" : "ham";
+        }
+    </script>
+
+</body>
+</html>
