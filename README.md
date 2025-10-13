@@ -22,7 +22,7 @@ A simple **spam detection system** that classifies messages as **spam** or **ham
 ## **Demo**
 
 ![Demo Screenshot](img/image.png)
-*(Add a screenshot of your frontend here for better presentation.)*
+
 
 ---
 
