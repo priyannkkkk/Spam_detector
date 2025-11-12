@@ -1,6 +1,6 @@
 # Spam Detector
 
-A simple **spam detection system** that classifies messages as **spam** or **ham**. This project includes a **frontend interface**, a **trained machine learning model**, and a **dataset** for testing. It’s designed for educational purposes and to demonstrate how spam detection works in real-world scenarios.
+A simple **spam detection system** that classifies messages as **spam** or **ham**. This project includes a **frontend interface**, a **trained machine learning model**, and a **dataset** for testing. It’s designed for educational purposes and to demonstrate how spam detection works in real-world scenarios..
 
 ---
 
